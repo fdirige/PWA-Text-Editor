@@ -38,8 +38,8 @@ module.exports = () => {
       description: "Offline Text Editor",
       background_color: "#225ca3",
       theme_color: "#225ca3",
-      start_url: "/",
-      publicPath: "/",
+      start_url: '/',
+      publicPath: '/',
       icons: [
         {
           src: path.resolve("src/images/logo.png"),
@@ -61,10 +61,10 @@ module.exports = () => {
           exclude: /node_modules/,
           use: {
             loader: "babel-loader",
-            plugins: [
-              "@babel/plugin-proposal-object-rest-spread",
-              "@babel/transform-runtime",
-            ],
+            options: {
+              presets: ['@babel/preset-env'],
+              plugins: ['@bable/plugin-proposal-object-rest-spread', '@babel/transform-runtime'],
+            },  
           },
         },
       ],
